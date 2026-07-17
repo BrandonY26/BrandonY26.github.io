@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>if("IntersectionObserver" in window)document.documentElement.classList.add("js-anim");</script>
   <title>Borins & Company</title>
   <meta name="description" content="Vancouver based law firm specializing in labour, employment, litigation, non-profits, societies, immigration, and public policy related matters.">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -212,6 +213,34 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
+  </script>
+<script>
+    // Staggered slide-in reveal for the practice-area rows.
+    (function () {
+      var rows = document.querySelectorAll(".docket-list .docket-row");
+      if (!rows.length) return;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) {
+        rows.forEach(function (row) { row.classList.add("is-visible"); });
+        return;
+      }
+      var anyFired = false;
+      var io = new IntersectionObserver(function (entries) {
+        anyFired = true;
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target, i = Array.prototype.indexOf.call(rows, el);
+          setTimeout(function () { el.classList.add("is-visible"); }, i * 90);
+          io.unobserve(el);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      rows.forEach(function (row) { io.observe(row); });
+      // Safety net: if the observer never delivers a callback (rare edge
+      // cases), reveal every row so content is never left hidden.
+      setTimeout(function () {
+        if (!anyFired) rows.forEach(function (row) { row.classList.add("is-visible"); });
+      }, 2500);
+    })();
   </script>
 </body>
 </html>

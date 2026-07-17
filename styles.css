@@ -454,6 +454,23 @@ section.tight { padding: 4rem 0; }
   .row-arrow { display: flex; justify-self: flex-end;}
 }
 
+/* Scroll-reveal: docket rows slide in from the left as they enter view.
+   Uses the standalone `translate` property so it composes with the
+   `transform`-based hover effect above. Only active when JS is present
+   (.js-anim on <html>) and the user hasn't asked to reduce motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .js-anim .docket-list .docket-row {
+    opacity: 0;
+    translate: -2.5rem 0;
+    transition: background 0.2s ease, transform 0.2s ease,
+                opacity 0.6s ease, translate 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .js-anim .docket-list .docket-row.is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
 /* ---------- Approach band ---------- */
 .band { 
   flex: display;
