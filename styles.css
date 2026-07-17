@@ -226,6 +226,12 @@ nav ul li a.active::after { width: 100%; background: var(--slate); }
 
 @media (max-width: 54rem) {
   nav ul { display: none; }
+  /* Tighter side padding on mobile leaves room for the Menu button when
+     the user has enlarged their text size. */
+  .header-inner { padding: 1rem 1.25rem; }
+  /* Pin the logo to a fixed height on mobile (same as its normal 2rem size)
+     so it doesn't inflate the header when the user scales up text. */
+  .logo-img { height: 32px; }
   .nav-toggle {
     display: block;
     background: var(--slate);
@@ -305,6 +311,7 @@ nav ul li a.active::after { width: 100%; background: var(--slate); }
   font-size: 2.8rem;
   line-height: 1.1;
   letter-spacing: -0.015em;
+  overflow-wrap: break-word;
   color: var(--slate);
 }
 .page-hero .accent { color: var(--orange); }
@@ -368,6 +375,7 @@ nav ul li a.active::after { width: 100%; background: var(--slate); }
 .hero-photo-wrap .hero-headline {
   color: #fff;
   max-width: 23rem;
+  overflow-wrap: break-word;
 }
 
 .hero-photo-wrap .hero-headline .accent { color: var(--mint); }
@@ -585,6 +593,9 @@ section.tight { padding: 4rem 0; }
 /* ---------- Contact ---------- */
 .contact-section { border-top: 1px solid var(--hairline); }
 .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; }
+/* Let grid tracks shrink below their content's intrinsic width so the
+   columns never force horizontal overflow (matters when text is scaled up). */
+.contact-grid > * { min-width: 0; }
 .contact-grid h2 {
   font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
@@ -592,10 +603,11 @@ section.tight { padding: 4rem 0; }
   color: var(--slate);
   max-width: 30rem;
   line-height: 1.18;
+  overflow-wrap: break-word;
   letter-spacing: -0.01em;
 }
 .contact-detail { margin-top: 2.1rem;  }
-.contact-detail-row { display: flex; align-items: flex-start; gap: 2rem; }
+.contact-detail-row { display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
 .linkedin-link { display: flex; align-items: center; padding-top: 1.5rem; color: var(--slate); transition: color 0.2s ease; flex-shrink: 0; }
 .linkedin-link:hover { color: #0A66C2; }
 .linkedin-link svg { fill: currentColor; display: block; }
