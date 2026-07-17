@@ -639,8 +639,14 @@ footer { border-top: 1px solid; color: var(--slate); padding: 2rem 0; }
 .footer-links a:hover { color: var(--orange); }
 .footer-copyright { display: flex; align-items: center;}
 
+/* "Back to Top" link only appears in the mobile footer (see media query). */
+.footer-top-link { display: none; }
+
 @media(max-width: 54rem) {
   .footer-inner { flex-direction: column; gap: 2rem; align-items: flex-start;}
+  /* Replace the cramped link grid with a single Back to Top button on mobile. */
+  .footer-links a:not(.footer-top-link) { display: none; }
+  .footer-top-link { display: inline-block; padding: 0; }
 }
 
 @media (max-width: 54rem) {
