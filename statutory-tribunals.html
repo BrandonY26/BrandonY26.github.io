@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <span id="top" aria-hidden="true"></span>
   <header>
     <div class="header-inner">
       <a href="index.html" aria-label="Borins & Company — Home">
@@ -79,7 +80,7 @@
       <a href="team.html">Team</a>
       <a href="paralegal-services.html">Paralegal Services</a>
       <a href="contact.html">Contact</a>
-      <a class="footer-top-link btn-secondary" href="index.html">&uarr; Back to Top</a>
+      <a class="footer-top-link btn-secondary" href="#top">&uarr; Back to Top</a>
     </div>
     <div>&copy; 2026 Borins &amp; Company. Vancouver, British Columbia.</div>
   </div>
@@ -105,5 +106,14 @@
     });
   });
 </script>
+<script>
+    // Footer "Back to Top" — smooth-scroll to the top of the current page.
+    document.querySelectorAll(".footer-top-link").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
 </body>
 </html>
