@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borins & Company</title>
+  <meta name="description" content="Vancouver based law firm specializing in labour, employment, litigation, non-profits, societies, immigration, and public policy related matters.">
+  <link rel="icon" type="image/png" href="Assets/assets-favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" aria-label="Borins & Company — Home">
+        <img src="assets/assets-logo.png" alt="Borins & Company" class="logo-img">
+      </a>
+      <nav id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-dropdown">
+            <a class="active">Practice Areas <span class="caret"></span></a>
+            <ul class="dropdown">
+              <li><a href="practice-areas.html">Overview</a></li>
+              <li><a href="labour-employment.html">Labour & Employment Law</a></li>
+              <li><a href="societies-non-profits.html">Societies & Non-Profit Law</a></li>
+              <li><a href="statutory-tribunals.html">Statutory Tribunals</a></li>
+              <li><a href="workplace-investigations.html">Workplace Investigations</a></li>
+              <li><a href="government-relations.html">Government Relations</a></li>
+              <li><a href="litigation.html">Litigation</a></li>
+            </ul>
+          </li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="paralegal-services.html">Paralegal Services</a></li>
+          <li><a class="nav-contact" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+<section class="page-hero">
+  <div class="page-hero-blocks"><div class="hb1"></div><div class="hb2"></div></div>
+  <div class="wrap">
+    <div class="docket"><span class="rule"></span><span>Practice Areas &mdash; File 05</span></div>
+    <h1>Government Relations<span class="accent">.</span></h1>
+    <p class="lede">Advice and representation before all levels of government on public policy matters, including regulatory and statutory amendments.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="linked-body">
+      <p style="margin-bottom: 2rem;">We advise and represent our clients before all levels of government on public policy matters including regulatory and statutory amendments.</p>
+      <h2 style="margin-bottom: 2rem;">Representative Work</h2>
+      <ul style="margin-left: 2rem;">
+        <li>In 2014 and 2015, we represented a coalition of student organizations in preparing a submission to the provincial government concerning the <a href="https://societiesact.ca/wp-content/uploads/2018/11/SocietyActWhitePaperArchived.pdf" target="blank" rel="noopener">government’s proposal to enact a new Societies Act</a>,  that would negatively affect their interests. The government was receptive to our clients’ concerns and enacted statutory (<a href="https://www.leg.bc.ca/parliamentary-business/overview/40th-parliament/4th-session/file/votes/progress-of-bills.htm" target="blank" rel="noopener">Miscellaneous Statutes Amendment Act (No. 3), 2015, SBC 2015, c 42</a>) and regulatory amendments (the <a href="https://www.canlii.org/en/bc/laws/regu/bc-reg-321-2016/latest/bc-reg-321-2016.html" target="blank" rel="noopener">University Student Society Fees Regulation, BC Reg 321/2016</a> and the <a href="https://www.canlii.org/en/bc/laws/regu/bc-reg-320-2016/latest/bc-reg-320-2016.html" target="blank" rel="noopener">College and Institute Student Society Fees Regulation, BC Reg 320/2016</a>) that protected our clients’ interests.</li>
+        <li>In 2016, we represented a maritime trade union in preparing a submission to the federal government concerning a <a href="https://tc.canada.ca/en/corporate-services/acts-regulations/canada-transportation-act-review-report"  target="blank" rel="noopener">report that recommended regulatory changes</a> that would have been harmful to its members’ interests, by allowing foreign vessels to engage in cabotage (coasting trade) without restrictions in Canadian waters. The government was receptive to our client’s concerns and declined to repeal the <a href="https://lois.justice.gc.ca/eng/acts/C-33.3/index.html" target="blank" rel="noopener">Coasting Trade Act, SC 1992, c 31</a>, which allows foreign-flagged vessels to engage in cabotage only when no suitable Canadian vessel is available to perform the work.</li>
+        <li>In 2024, we assisted an association of truck drivers in preparing a submission to the <a href="https://obcctc.ca/" target="blank" rel="noopener">BC Container Trucking Commissioner</a>, advocating regulatory amendments that would improve working conditions for the association’s members.</li>
+        <li>We have represented a Ministry of the Government of British Columbia to assist with reviewing proposed statutory and regulatory changes.</li>
+      </ul>
+    </div>
+    <div style="margin-top: 7rem;">
+      <a class="btn-secondary" href="practice-areas.html">&larr; Back to All Practice Areas</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <a class="logo-mark" href="index.html" aria-label="Borins & Company — Home">
+        <img src="assets/assets-logo.png" alt="Borins & Company" class="logo-img">
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="practice-areas.html">Practice Areas</a>
+      <a href="team.html">Team</a>
+      <a href="paralegal-services.html">Paralegal Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 Borins &amp; Company. Vancouver, British Columbia.</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+  // On small screens, tapping "Practice Areas" expands its submenu
+  // instead of navigating away, since hover doesn't apply on touch.
+  document.querySelectorAll('.has-dropdown > a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 920px)').matches) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>

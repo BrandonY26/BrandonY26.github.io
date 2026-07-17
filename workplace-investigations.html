@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borins & Company</title>
+  <meta name="description" content="Vancouver based law firm specializing in labour, employment, litigation, non-profits, societies, immigration, and public policy related matters.">
+  <link rel="icon" type="image/png" href="Assets/assets-favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" aria-label="Borins & Company — Home">
+        <img src="assets/assets-logo.png" alt="Borins & Company" class="logo-img">
+      </a>
+      <nav id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-dropdown">
+            <a class="active">Practice Areas <span class="caret"></span></a>
+            <ul class="dropdown">
+              <li><a href="practice-areas.html">Overview</a></li>
+              <li><a href="labour-employment.html">Labour & Employment Law</a></li>
+              <li><a href="societies-non-profits.html">Societies & Non-Profit Law</a></li>
+              <li><a href="statutory-tribunals.html">Statutory Tribunals</a></li>
+              <li><a href="workplace-investigations.html">Workplace Investigations</a></li>
+              <li><a href="government-relations.html">Government Relations</a></li>
+              <li><a href="litigation.html">Litigation</a></li>
+            </ul>
+          </li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="paralegal-services.html">Paralegal Services</a></li>
+          <li><a class="nav-contact" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+<section class="page-hero">
+  <div class="page-hero-blocks"><div class="hb1"></div><div class="hb2"></div></div>
+  <div class="wrap">
+    <div class="docket"><span class="rule"></span><span>Practice Areas &mdash; File 04</span></div>
+    <h1>Workplace Investigations<span class="accent">.</span></h1>
+    <p class="lede">Harassment and other workplace investigations conducted for unions and employers, and representation for employees navigating an active investigation.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="linked-body">
+      <p style="margin-bottom: 2rem;">We have substantial experience providing counsel to employers, trade unions, and individual employees with respect to harassment and other workplace investigations. We have developed anti-harassment policies for numerous employers. We frequently provide advice in connection with the interpretation and application of harassment policies.</p>
+      <h2 style="margin-bottom: 2rem;">Representative Work</h2>
+      <ul style="margin-left: 2rem;">
+        <li>In 2022, when a professional association suspended a member for one year based on a vague allegation of harassment, we commenced a proceeding on behalf of the member before the Supreme Court of British Columbia. In <a href="https://www.canlii.org/en/bc/bcsc/doc/2022/2022bcsc619/2022bcsc619.html" target="blank" rel="noopener">Webb v Canadian Medical Association, 2022 BCSC 619</a>, the court determined that the suspension was conducted contrary to the norms of natural justice.</li>
+        <li>In 2022, we provided counsel to a senior civil servant who underwent an investigation into allegations that she had engaged in inappropriate and disrespectful treatment of staff, and harassment. The investigation concluded that our client had not engaged in harassment and that she had acted in an appropriate and respectful manner towards staff on almost all occasions.</li>
+        <li>In 2023-2024, we represented a trade union client with respect to a grievance that alleged that the grievor was harassed by her managers, and that the employer had failed to comply with federal legislation regulating the conduct of harassment investigations. We were able to negotiate a favourable settlement agreement for the grievor.</li>
+      </ul>
+    </div>
+    <div style="margin-top: 7rem;">
+      <a class="btn-secondary" href="practice-areas.html">&larr; Back to All Practice Areas</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <a class="logo-mark" href="index.html" aria-label="Borins & Company — Home">
+        <img src="assets/assets-logo.png" alt="Borins & Company" class="logo-img">
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="practice-areas.html">Practice Areas</a>
+      <a href="team.html">Team</a>
+      <a href="paralegal-services.html">Paralegal Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 Borins &amp; Company. Vancouver, British Columbia.</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+  // On small screens, tapping "Practice Areas" expands its submenu
+  // instead of navigating away, since hover doesn't apply on touch.
+  document.querySelectorAll('.has-dropdown > a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 920px)').matches) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
